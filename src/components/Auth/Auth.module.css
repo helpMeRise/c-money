@@ -1,0 +1,70 @@
+.auth__container {
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+}
+
+.auth__wrapper {
+    width: 580px;
+    height: 466px;
+    background: var(--header);
+    border-radius: 10px;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__title {
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+
+.form__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.form__error {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: red;
+    font-size: 14px;
+}
+
+.form__input-wrapper:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.form__label {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.form__input {
+    border: 2px solid var(--pink);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form__button {
+    padding: 22.5px 0;
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+}

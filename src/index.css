@@ -1,3 +1,60 @@
+@font-face {
+  font-family: "Comfortaa";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+  url("fonts/comfortaa-v40-cyrillic-700.woff2")
+  format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url("fonts/comfortaa-v40-cyrillic-700.woff")
+  format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+  url("fonts/nunito-v24-cyrillic-regular.woff2")
+  format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url("fonts/nunito-v24-cyrillic-regular.woff")
+  format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""),
+  url("fonts/nunito-v24-cyrillic-600.woff2")
+  format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url("fonts/nunito-v24-cyrillic-600.woff")
+  format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+  url("fonts/nunito-v24-cyrillic-700.woff2")
+  format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url("fonts/nunito-v24-cyrillic-700.woff")
+  format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+:root {
+  --header: #392350;
+  --bgcolor: #210B36;
+  --text: #C6B6D7;
+  --pink: #9C19CA;
+  --blue: #4B00CA;
+}
+
+
 html {
   position: relative;
   box-sizing: border-box;
@@ -16,7 +73,8 @@ body {
   font-size: 16px;
   font-weight: 400;
   margin: unset;
-  background-color: #210B36;
+  background-color: var(--bgcolor);
+  color: #fff;
 }
 
 img {
@@ -62,4 +120,11 @@ iframe {
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+.button {
+  background: linear-gradient(87.4deg, #2E00B1 -11.74%, #8100BD 48.81%, #A400BE 113.27%);
+  border-radius: 10px;
+  border: none;
+  color: #fff;
 }
