@@ -2,26 +2,45 @@ import React from 'react';
 import style from './Auth.module.css';
 import { Layout } from '../Layout/Layout';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { URL_API } from '../../api/const';
 
 export const Auth = () => {
+  const navigate = useNavigate();
   const {
     register,
     formState: {
       errors,
     },
-    reset,
     handleSubmit,
   } = useForm({
     mode: 'onChange',
   });
 
+
   const onSubmit = data => {
-    alert(JSON.stringify(data));
-    reset();
+    axios(`${URL_API}/login`, {
+      data,
+      method: 'POST',
+    })
+      .then(({ data }) => {
+        if (!data.payload) {
+          alert(data.error);
+        } else {
+          localStorage.setItem('token', data.payload.token);
+          navigate('/currencies');
+        }
+      })
+      .catch(error => console.log(error));
   };
 
   return (
     <Layout>
+      <div>
+        <p>login: developer</p>
+        <p>password: methed</p>
+      </div>
       <div className={style.auth__container}>
         <div className={style.auth__wrapper}>
           <form className={style.form} onSubmit={handleSubmit(onSubmit)}>

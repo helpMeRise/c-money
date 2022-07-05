@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 80px;
+}
+
+.title {
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 45px;
+}
+
+.button {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 12px 30px;
+    margin-bottom: 70px;
+}
+
+.currencies {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.currencies__title {
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 29px;
+    margin-bottom: 20px;
+}
+
+.sort {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.sort__title {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--text);
+}
+
+.select {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    width: 70px;
+    outline: transparent;
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    font-wrap: wrap;
+    gap: 20px;
+}
