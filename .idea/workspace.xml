@@ -24,9 +24,14 @@
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Currencies/Card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Currencies/Card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Currencies/Card/Card.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Currencies/Card/Card.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Currencies/Currencies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Currencies/Currencies.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Currencies/Currencies.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Currencies/Currencies.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/Layout.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Layout.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/currencies/currenciesSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/currencies/currenciesSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/saga.js" afterDir="false" />
     </list>
@@ -74,7 +79,9 @@
       <updated>1656938509524</updated>
       <workItem from="1656938513672" duration="2870000" />
       <workItem from="1656948515634" duration="7543000" />
-      <workItem from="1657017128485" duration="21205000" />
+      <workItem from="1657017128485" duration="21371000" />
+      <workItem from="1657097848668" duration="24158000" />
+      <workItem from="1657125030940" duration="7042000" />
     </task>
     <servers />
   </component>
@@ -94,6 +101,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="723" y="313" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1657116365968">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="723" y="313" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1032/0.0.1920.1032@0.0.1920.1032" timestamp="1657116365968" />
     <state x="690" y="262" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1656938823413">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

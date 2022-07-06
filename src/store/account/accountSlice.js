@@ -2,28 +2,28 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   loading: true,
-  data: [],
+  data: {},
   error: '',
 };
 
-export const currenciesSlice = createSlice({
-  name: 'currencies',
+export const accountSlice = createSlice({
+  name: 'account',
   initialState,
   reducers: {
-    currenciesRequest: (state) => {
+    accountRequest: (state) => {
       state.loading = true;
       state.error = '';
     },
-    currenciesRequestSuccess: (state, action) => {
+    accountRequestSuccess: (state, action) => {
       state.loading = false;
       state.data = action.payload;
       state.error = '';
     },
-    currenciesRequestError: (state, action) => {
+    accountRequestError: (state, action) => {
       state.loading = false;
       state.error = action.payload.error;
     },
   }
 });
 
-export default currenciesSlice.reducer;
+export default accountSlice.reducer;

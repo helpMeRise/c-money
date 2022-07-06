@@ -1,0 +1,39 @@
+.dynamic {
+    width: 580px;
+    background: var(--header);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.dynamic__header {
+    display: flex;
+    align-items: center;
+}
+
+.dynamic__title {
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    margin-right: 20px;
+}
+
+.dynamic__year {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--text);
+}
+
+.dynamic__select {
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+    color: var(--text);
+}
+
+.dynamic__select option {
+    background-color: var(--header);
+}

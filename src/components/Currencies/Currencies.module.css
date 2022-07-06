@@ -57,10 +57,14 @@
     width: 70px;
     outline: transparent;
 }
+.select option {
+    background-color: var(--bgcolor);
+}
 
 .list {
     width: 100%;
     display: flex;
-    font-wrap: wrap;
+    flex-wrap: wrap;
     gap: 20px;
 }
+

@@ -128,3 +128,7 @@ iframe {
   border: none;
   color: #fff;
 }
+
+.active {
+  color: var(--text);
+}
