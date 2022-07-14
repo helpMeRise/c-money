@@ -1,15 +1,20 @@
 import React from 'react';
 import style from './Header.module.css';
 import { ReactComponent as LogoIcon } from './image/logo.svg';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { Currencies } from '../Currencies/Currencies';
 import { Exchange } from '../Exchange/Exchange';
-import { Auth } from '../Auth/Auth';
+// import { Auth } from '../Auth/Auth';
 import { ReactComponent as ExitIcon } from './image/arrow.svg';
 
 export const Header = props => {
   const token = localStorage.getItem('token');
+  const navigate = useNavigate();
+  const logOut = () => {
+    localStorage.setItem('token', '');
+    navigate('/auth');
+  };
 
   return (
     <div className={style.header}>
@@ -22,9 +27,11 @@ export const Header = props => {
             <ul className={style.nav}>
               <NavLink to='/currencies' element={<Currencies/>}>Счета</NavLink>
               <NavLink to='/exchange' element={<Exchange/>}>Обмен</NavLink>
-              <Link
+              <button
                 className={style.exit}
-                to='/auth' element={<Auth/>}>Выйти <ExitIcon/></Link>
+                onClick={logOut}>
+                Выйти <ExitIcon/>
+              </button>
             </ul>
           )}
         </div>
