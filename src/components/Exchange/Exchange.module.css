@@ -1,0 +1,145 @@
+.container {
+    padding-top: 60px;
+}
+
+.title {
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 29px;
+    margin-bottom: 40px;
+}
+
+.text {
+    display: inline-block;
+    width: 70px;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.text:first-of-type {
+    margin-bottom: 15px;
+}
+
+.text_white {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.balance:after {
+    content: ' ₽';
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rates__wrapper {
+    display: flex;
+    padding: 15px 60px 25px 20px;
+    background: var(--header);
+    border-radius: 10px;
+}
+
+.right__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.exchange__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 20px;
+    background-color: var(--header);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.exchange__title {
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs__wrapper {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px
+}
+
+.input-wrapper:not(:last-of-type) {
+    margin-right: 35px;
+}
+
+.label {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--text);
+    margin-bottom: 2px;
+    padding-left: 10px;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.input:last-of-type {
+    width: 147px;
+}
+
+.button {
+    padding: 6px 30px;
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    max-width: 150px;
+    align-self: flex-end;
+}
+
+.currency__title {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.td__code {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--text);
+    width: 45px;
+}
+
+.td__amount {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+}
