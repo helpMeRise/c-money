@@ -46,6 +46,49 @@
     padding: 15px 60px 25px 20px;
     background: var(--header);
     border-radius: 10px;
+    height: 350px;
+}
+
+.rates__title {
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.tbody {
+
+}
+
+.loader__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.td__first {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+
+.td__second {
+    width: 100%;
+    border-bottom: 1px solid var(--bgcolor);
+}
+
+.td__third {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 20px;
 }
 
 .right__wrapper {
@@ -81,6 +124,7 @@
 }
 
 .input-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-width: 150px
@@ -142,4 +186,12 @@
     font-weight: 700;
     font-size: 15px;
     line-height: 20px;
+}
+
+.form__error {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    color: tomato;
+    font-size: 12px;
 }

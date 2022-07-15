@@ -1,12 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './Exchange.module.css';
 import { Layout } from '../Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { accountSlice } from '../../store/account/accountSlice';
 import { numberWithSpaces } from '../../utils/numberWithSpaces';
 import { myCurrenciesSlice } from '../../store/myCurrencies/myCurrenciesSlice';
+import { URL_API, URL_API_WS } from '../../api/const';
+import { ReactComponent as ArrowUp } from './image/up.svg';
+import { ReactComponent as ArrowDown } from './image/down.svg';
+import CircleLoader from 'react-spinners/CircleLoader';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
 
 export const Exchange = () => {
+  const token = localStorage.getItem('token');
   const dispatch = useDispatch();
   const accountData = useSelector(state => state.accountReducer.data.payload);
   const currencies = useSelector(
@@ -26,6 +33,44 @@ export const Exchange = () => {
       arr.push(currencies[key]);
     }
   }
+  const [body, setBody] = useState([]);
+
+
+  const socet = new WebSocket(`${URL_API_WS}/currency-feed`);
+
+  socet.addEventListener('message', message => {
+    if (body.length >= 7) {
+      setBody(body.slice(-6));
+    } else {
+      setBody([...body, JSON.parse(message.data)]);
+    }
+  });
+
+  const {
+    register,
+    formState: {
+      errors,
+    },
+    handleSubmit,
+    reset,
+  } = useForm({
+    mode: 'onChange',
+  });
+
+  const onSubmit = (data) => {
+    axios(`${URL_API}/currency-buy`, {
+      data,
+      method: 'POST',
+      headers: {
+        Authorization: `Basic ${token}`,
+      }
+    })
+      .then(() => {
+        dispatch(myCurrenciesSlice.actions.myCurrenciesRequest());
+      })
+      .catch(error => alert(error));
+    reset();
+  };
 
   return (
     <Layout>
@@ -52,29 +97,68 @@ export const Exchange = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody className={style.tbody}>
+                {body.length >= 6 ? (
+                  body.map((item, index) => (
+                    <tr className={style.tr_e} key={index}>
+                      <td className={style.td__first}>{item.from}/{item.to}</td>
+                      <td className={style.td__second}/>
+                      <td className={style.td__third}>
+                        {item.rate}{item.change === 1 ? (<ArrowUp/>) :
+                        (<ArrowDown/>)}
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td
+                      className={style.loader__container}
+                      colSpan={3}><CircleLoader color='tomato'/></td>
+                  </tr>
+                )}
+              </tbody>
             </table>
           </div>
           <div className={style.right__wrapper}>
             <div className={style.exchange__wrapper}>
               <h3 className={style.exchange__title}>Обмен валюты</h3>
-              <form className={style.form}>
+              <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
                 <div className={style.inputs__wrapper}>
                   <div className={style['input-wrapper']}>
                     <label className={style.label}>Откуда</label>
-                    <select className={style.input}>
+                    <select className={style.input}
+                      {...register('from')}
+                    >
                       {arr.map(item => (
                         <option key={item.code}>{item.code}</option>
                       ))}
                     </select>
                   </div>
                   <div className={style['input-wrapper']}>
+                    <span className={style.form__error}>
+                      {errors?.to && (errors?.to?.message || 'Error')}
+                    </span>
                     <label className={style.label}>Куда</label>
-                    <input className={style.input}/>
+                    <input className={style.input}
+                      {...register('to', {
+                        required: 'Поле обязательно к заполнению',
+                      })}
+                    />
                   </div>
                   <div className={style['input-wrapper']}>
+                    <span className={style.form__error}>
+                      {errors?.amount && (errors?.amount?.message || 'Error')}
+                    </span>
                     <label className={style.label}>Сумма</label>
-                    <input className={style.input}/>
+                    <input className={style.input}
+                      {...register('amount', {
+                        required: 'Поле обязательно к заполнению',
+                        min: {
+                          value: 1,
+                          message: 'Сумма больше 1'
+                        }
+                      })}
+                    />
                   </div>
                 </div>
                 <button className={style.button + ' button'}>Обменять</button>
