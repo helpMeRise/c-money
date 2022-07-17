@@ -6,7 +6,6 @@ import { Currencies } from './components/Currencies/Currencies';
 import { Account } from './components/Account/Account';
 import { Exchange } from './components/Exchange/Exchange';
 
-
 function App() {
   return (
     <Routes>

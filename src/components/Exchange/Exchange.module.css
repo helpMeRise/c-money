@@ -43,10 +43,12 @@
 
 .rates__wrapper {
     display: flex;
+    flex-direction: column;
     padding: 15px 60px 25px 20px;
     background: var(--header);
     border-radius: 10px;
     height: 350px;
+    overflow: hidden;
 }
 
 .rates__title {
@@ -58,6 +60,13 @@
 
 .tbody {
 
+}
+
+.tr_e {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 7px;
 }
 
 .loader__container {

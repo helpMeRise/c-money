@@ -8,9 +8,11 @@ import { myCurrenciesSlice } from '../../store/myCurrencies/myCurrenciesSlice';
 import { URL_API, URL_API_WS } from '../../api/const';
 import { ReactComponent as ArrowUp } from './image/up.svg';
 import { ReactComponent as ArrowDown } from './image/down.svg';
-import CircleLoader from 'react-spinners/CircleLoader';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+
+let socetData = {};
+export const socket = new WebSocket(`${URL_API_WS}/currency-feed`);
 
 export const Exchange = () => {
   const token = localStorage.getItem('token');
@@ -36,15 +38,20 @@ export const Exchange = () => {
   const [body, setBody] = useState([]);
 
 
-  const socet = new WebSocket(`${URL_API_WS}/currency-feed`);
+  useEffect(() => {
+    socket.addEventListener('message', message => {
+      socetData = JSON.parse(message.data);
+    });
+  }, []);
 
-  socet.addEventListener('message', message => {
-    if (body.length >= 7) {
-      setBody(body.slice(-6));
-    } else {
-      setBody([...body, JSON.parse(message.data)]);
-    }
-  });
+  useEffect(() => {
+    setTimeout(() => {
+      setBody([...body, socetData]);
+      if (body.length > 7) {
+        setBody(body.slice(-7));
+      }
+    }, 1000);
+  }, [socetData]);
 
   const {
     register,
@@ -87,37 +94,23 @@ export const Exchange = () => {
         </span>
         <div className={style.wrapper}>
           <div className={style.rates__wrapper}>
-            <table>
-              <thead>
-                <tr>
-                  <th
-                    className={style.rates__title}
-                    colSpan={3}>
-                    Изменение курса в режиме реального времени
-                  </th>
-                </tr>
-              </thead>
-              <tbody className={style.tbody}>
-                {body.length >= 6 ? (
-                  body.map((item, index) => (
-                    <tr className={style.tr_e} key={index}>
-                      <td className={style.td__first}>{item.from}/{item.to}</td>
-                      <td className={style.td__second}/>
-                      <td className={style.td__third}>
-                        {item.rate}{item.change === 1 ? (<ArrowUp/>) :
-                        (<ArrowDown/>)}
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td
-                      className={style.loader__container}
-                      colSpan={3}><CircleLoader color='tomato'/></td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
+            <h3
+              className={style.rates__title}>
+              Изменение курса в режиме реального времени
+            </h3>
+            <div className={style.tbody}>
+              {body.map((item, index) => (
+                <div className={style.tr_e} key={index}>
+                  <span
+                    className={style.td__first}>{item.from}/{item.to}</span>
+                  <span className={style.td__second}/>
+                  <span className={style.td__third}>
+                    {item.rate}{item.change === 1 ? (<ArrowUp/>) :
+                    (<ArrowDown/>)}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
           <div className={style.right__wrapper}>
             <div className={style.exchange__wrapper}>
@@ -135,15 +128,14 @@ export const Exchange = () => {
                     </select>
                   </div>
                   <div className={style['input-wrapper']}>
-                    <span className={style.form__error}>
-                      {errors?.to && (errors?.to?.message || 'Error')}
-                    </span>
                     <label className={style.label}>Куда</label>
-                    <input className={style.input}
-                      {...register('to', {
-                        required: 'Поле обязательно к заполнению',
-                      })}
-                    />
+                    <select className={style.input}
+                      {...register('to')}
+                    >
+                      {arr.map(item => (
+                        <option key={item.code}>{item.code}</option>
+                      ))}
+                    </select>
                   </div>
                   <div className={style['input-wrapper']}>
                     <span className={style.form__error}>
@@ -178,7 +170,9 @@ export const Exchange = () => {
                     <tr className={style.tr} key={item.code}>
                       <td className={style.td__code}>{item.code}</td>
                       <td className={style.td__amount}>
-                        {numberWithSpaces(item.amount)}
+                        {Number.isInteger(item.amount) ?
+                          numberWithSpaces(item.amount) :
+                          numberWithSpaces((item.amount).toFixed(2))}
                       </td>
                     </tr>
                   ))}
