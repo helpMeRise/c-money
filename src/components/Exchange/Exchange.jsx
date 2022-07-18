@@ -12,7 +12,6 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
 let socetData = {};
-export const socket = new WebSocket(`${URL_API_WS}/currency-feed`);
 
 export const Exchange = () => {
   const token = localStorage.getItem('token');
@@ -39,9 +38,13 @@ export const Exchange = () => {
 
 
   useEffect(() => {
+    const socket = new WebSocket(`${URL_API_WS}/currency-feed`);
     socket.addEventListener('message', message => {
       socetData = JSON.parse(message.data);
     });
+    return () => {
+      socket.close();
+    };
   }, []);
 
   useEffect(() => {
