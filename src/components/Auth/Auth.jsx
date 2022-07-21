@@ -86,7 +86,7 @@ export const Auth = () => {
               <button
                 className={style.form__button + ' button'}
                 type='submit'
-              >Перевести</button>
+              >Войти</button>
             </form>
           </div>
 

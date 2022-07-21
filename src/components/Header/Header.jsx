@@ -21,7 +21,7 @@ export const Header = props => {
       <Layout>
         <div className={style.container}>
           <Link to='/auth'>
-            <LogoIcon/>
+            <LogoIcon className={style.logo}/>
           </Link>
           {token && (
             <ul className={style.nav}>
@@ -30,7 +30,7 @@ export const Header = props => {
               <button
                 className={style.exit}
                 onClick={logOut}>
-                Выйти <ExitIcon/>
+                Выйти <ExitIcon className={style.arrow}/>
               </button>
             </ul>
           )}

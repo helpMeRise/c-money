@@ -140,3 +140,50 @@
     font-size: 18px;
     line-height: 25px;
 }
+
+@media (max-width: 768px) {
+    .container__header {
+        flex-direction: column-reverse;
+        margin-bottom: 30px;
+        gap: 15px;
+    }
+    .title {
+        font-size: 14px;
+    }
+    .button {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+    .dynamic {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .history {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .history__title {
+        font-size: 20px;
+        text-align: center;
+    }
+    .transaction {
+        margin-top: 0;
+    }
+    .transaction__title {
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .transaction__form {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .transaction__input-wrap {
+        max-width: 100%;
+    }
+    .button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}

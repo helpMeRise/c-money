@@ -204,3 +204,26 @@
     color: tomato;
     font-size: 12px;
 }
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .rates__wrapper {
+        height: 330px;
+        padding-right: 20px;
+    }
+    .rates__title {
+        text-align: center;
+    }
+    .inputs__wrapper {
+        flex-direction: column;
+    }
+    .input-wrapper:not(:last-of-type) {
+        margin-right: 0;
+    }
+    .input:last-of-type {
+        width: 100%;
+    }
+}

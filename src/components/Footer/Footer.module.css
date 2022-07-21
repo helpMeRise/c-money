@@ -1,9 +1,21 @@
-.container {
+.footer {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     position: absolute;
     bottom: 50px;
-    max-width: 1420px;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        max-width: 100px;
+    }
+    .copy {
+        font-size: 14px;
+    }
+    .footer {
+        bottom: 20px;
+        width: 90%;
+    }
 }

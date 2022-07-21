@@ -6,9 +6,9 @@ import { Layout } from '../Layout/Layout';
 
 export const Footer = props => (
   <Layout>
-    <div className={style.container}>
+    <div className={style.footer}>
       <Link to='/'>
-        <LogoIcon/>
+        <LogoIcon className={style.logo}/>
       </Link>
       <span className={style.copy}>© C-Money, 2022</span>
     </div>

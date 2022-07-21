@@ -21,7 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1a6cde84-8300-49c1-a507-0e1902d1cb5d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exchange/Exchange.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exchange/Exchange.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Account/Account.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Account/Account.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Account/Table/Table.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Account/Table/Table.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Currencies/Currencies.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Currencies/Currencies.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Exchange/Exchange.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exchange/Exchange.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +87,8 @@
       <workItem from="1657967092898" duration="1162000" />
       <workItem from="1657998749790" duration="2550000" />
       <workItem from="1658054905484" duration="9489000" />
-      <workItem from="1658138477714" duration="907000" />
+      <workItem from="1658138477714" duration="1050000" />
+      <workItem from="1658397985067" duration="3163000" />
     </task>
     <servers />
   </component>

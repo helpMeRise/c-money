@@ -76,4 +76,25 @@
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .container {
+        justify-content: center;
+    }
+    .title {
+        font-size: 30px;
+        line-height: 35px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .bitton {
+        margin-bottom: 30px;
+    }
+    .currencies__title {
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+    .list {
+        margin-top: 20px;
+    }
+}
 
